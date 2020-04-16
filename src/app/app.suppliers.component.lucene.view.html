@@ -1,0 +1,26 @@
+<div>
+    <h2>The Standard Search Using 'English- Lucene'</h2>
+    <div class="form-row">
+        Note that you can query for Fields as FieldName:Value <br/> You can using AND/OR Conditions e.g FieldName1:Value1 AND FieldName2:Value2
+    </div>
+    <div class="form-group">
+        <label for="SearchQuery">Enter Search Value</label>
+        <input type="text" class="form-control" placeholder="Enter your search here" (keyup)="onChangeQuery()" [(ngModel)]="query">
+
+    </div>
+    <hr>
+    <label>Total Match Found: {{recordCount}}</label>
+    <hr>
+    <h2>Suppliers Details</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <td *ngFor="let h of headers">{{h}}</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let sup of suppliers">
+                <td *ngFor="let h of headers">{{sup[h]}}</td>
+            </tr>
+        </tbody>
+    </table>

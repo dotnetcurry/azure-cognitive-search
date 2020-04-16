@@ -1,0 +1,28 @@
+<div>
+    <h2>The Standard Search Using 'English- Microsoft'</h2>
+
+    <div class="form-group">
+        <label for="SearchQuery">Enter Search Value</label>
+        <input type="text" class="form-control" placeholder="Enter your search here" (keyup)="onChangeQuery()" [(ngModel)]="query">
+        <label>Select Page Size</label>
+        <select class="form-control" (change)=" onChangeQuery()" [(ngModel)]="pageSize">
+      <option *ngFor="let size of pageSizeArray" value="{{size}}">{{size}}</option>
+    </select>
+    </div>
+    <hr>
+    <label>Total Match Found: {{recordCount}}</label>
+    <hr>
+    <h2>Orders Details</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <td *ngFor="let h of headers">{{h}}</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ord of orders">
+                <td *ngFor="let h of headers">{{ord[h]}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
